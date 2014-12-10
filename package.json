@@ -13,6 +13,7 @@
   "dependencies": {
     "concat-stream": "^1.4.7",
     "readable-stream": "^1.0.33",
+    "split": "^0.3.2",
     "through2": "^0.6.3",
     "vinyl": "^0.4.6",
     "vinyl-fs": "^0.3.13"
@@ -26,10 +27,13 @@
     "gulp-cat": "^0.3.1",
     "gulp-concat-json": "^1.0.0",
     "gulp-connect": "^2.2.0",
+    "gulp-debug": "^1.0.1",
     "gulp-git": "^0.5.5",
     "gulp-jshint": "^1.9.0",
     "gulp-karma": "0.0.4",
     "gulp-mocha": "^2.0.0",
+    "gulp-rename": "^1.2.0",
+    "jshint-stylish": "^1.0.0",
     "karma": "^0.12.28",
     "mocha": "^2.0.1",
     "should": "^4.3.0"
@@ -37,7 +41,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "homepage": "http://thenaglecode.com/npm/gulp-regex-cut-and-paste",
+  "homepage": "http://thenaglecode.com/npm/gulp-regex-shuffler",
   "keywords": [
     "regex",
     "regular",
@@ -48,10 +52,12 @@
     "re-arrange",
     "re-organizing",
     "move",
-    "move text",
     "text",
     "gulpplugin",
-    "gulp-plugin"
+    "gulp-plugin",
+    "gulp",
+    "cut",
+    "paste"
   ],
   "licenses": [
     {
@@ -60,13 +66,13 @@
     }
   ],
   "main": "index.js",
-  "name": "npm-shuffle",
+  "name": "gulp-regex-shuffler",
   "repository": {
     "type": "git",
-    "url": "http://bitbucket.org/thenaglecode/npm-shuffle.git"
+    "url": "http://bitbucket.org/thenaglecode/gulp-regex-shuffler.git"
   },
   "scripts": {
-    "test": ""
+    "test": "gulp jshint test"
   },
-  "version": "0.0.0"
+  "version": "0.0.1-SNAPSHOT"
 }

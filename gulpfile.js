@@ -1,20 +1,20 @@
-var gutil = require('gulp-util'),
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     stream = require('stream'),
-    through = require('through2'),
     jshint = require('gulp-jshint'),
-    jshintStylish = require('jshint-stylish'),
+    shuffle = require('./index.js'),
     Readable = stream.Readable,
-    rs = new Readable();  
+    PluginError = gutil.PluginError,
+    rs = new Readable();
 
-/*
-    will cut and paste text according to regular expressions
- */
-var shuffle = function(cutRegex, pasteRegex, opts) {
-    if(typeof opts === 'undefined' || typeof opts !== 'object') {
-        opts = {};
-    }    
-}
+gulp.task('jshint', function() {
+    return gulp.src('index.js')
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'));
+});
 
 gulp.task('test', function() {
-   console.log('We haven\'t implemented this yet'); 
+    return gulp.src('test/*.txt')
+        .pipe(shuffle(/"use strict";[\n\s]*((?:\/\*[\s\S]*\*\/)[\n\s]*)[^\/]/g, /^/g, {verbose: true, captureGroup: 1}))
+        .pipe(gulp.dest('test/output'));
 });

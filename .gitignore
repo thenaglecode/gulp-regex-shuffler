@@ -3,3 +3,8 @@ node_modules/
 # sublime
 *.sublime-project
 *.sublime-workspace
+
+*.iml
+*.log
+.idea/
+test/
