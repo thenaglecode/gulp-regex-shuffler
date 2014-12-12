@@ -15,7 +15,7 @@ var regexCutAndPaste = require('gulp-regex-shuffler');
 
 gulp.task('move-text', function() {
     return gulp.src('*.txt')
-        .pipe(regexCutAndPaste(/move this text/g, /text goes here\s*\n/g)
+        .pipe(regexCutAndPaste(/move this text\n/g, /^/g)
         .pipe(gulp.dest('dist'));
 });
 ```
@@ -24,13 +24,13 @@ This will take the text `move this text` and place it after the line `text goes 
 
 e.g.
 
+    some line
     move this text
-    text goes here
 
 Will become
 
     text goes here
-    move this text
+    some line
 
 ### Function Definition
 
@@ -57,6 +57,8 @@ Will become
     <dd><strong>description:</strong> used to configure the plugin, see <a href="#options" >Options</a></dd>
     <dd><strong>example:</strong> <code>{verbose: true, pasteBefore: true, captureGroup: 1}</code></dd>
 </dl>
+
+<hr/>
 
 <h3 id="options">Options</h3>
 
