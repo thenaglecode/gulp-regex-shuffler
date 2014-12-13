@@ -1,4 +1,4 @@
-# gulp-regex-shuffler
+# gulp-regex-shuffler [![npm version](https://badge.fury.io/js/gulp-regex-shuffler.svg)](http://badge.fury.io/js/gulp-regex-shuffler) 
 
 ## Installation
 
@@ -68,14 +68,13 @@ Will become
 #### opts.captureGroup
 > - **Default:** `0`
 > - **Type:** number
-> - **Description:** an integer >= 0. describes the capture group that will be cut from the matching text.
-
+> - **Description:** an integer \>= 0. describes the capture group that will be cut from the matching text.
 
 ## Planned Improvements
 - Arbitrary cut and paste objects. Using `String(objectToInjectIntoText)` on whatever is passed into the first argument
   to allow for anything to be placed where the pasteRegex specifies
 - handle streams (still have to learn a bit more about streams before i complete this. If anyone can lead me to a
   comprehensive document on this i would be greatful :)
-- multiple match, cut and pastes using non-global regexes. e.g. /$\s*\S*hello\S*\s*^/m would find every string with the
+- multiple match, cut and pastes using non-global regexes. e.g. /$\\s*\\S*hello\\S*\\s*^/m would find every string with the
   text hello in it and paste each one one after the other or all together according to the provided options. There are
   a few scenarios I'll need to cater for so this change might take a while.

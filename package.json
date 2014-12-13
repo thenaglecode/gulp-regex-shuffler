@@ -20,6 +20,8 @@
   },
   "description": "Use regular expressions to shuffle around text!",
   "devDependencies": {
+    "assert": "^1.1.2",
+    "describe": "^1.2.0",
     "event-stream": "^3.1.7",
     "gulp": "^3.8.10",
     "gulp-build": "^0.5.3",
@@ -72,7 +74,7 @@
     "url": "http://bitbucket.org/thenaglecode/gulp-regex-shuffler.git"
   },
   "scripts": {
-    "test": "gulp jshint test"
+    "test": "./node_modules/.bin/gulp jshint test"
   },
   "version": "0.1.0"
 }
