@@ -88,7 +88,7 @@ var shuffle = function(cutRegex, pasteRegex, opts) {
                             all.slice(cutMatch.index + indexOfCaptureGroup + cutText.length, all.length)]
                             .join('');
                     } else {
-                        afterCutText = [all.slice(0, cutMatch.index), all.slice(cutRegex.lastIndex - 1, all.length)].join('');
+                        afterCutText = [all.slice(0, cutMatch.index), all.slice(cutRegex.lastIndex, all.length)].join('');
                     }
                     position = (opts.pasteBefore) ? pasteMatch.index : pasteRegex.lastIndex;
                     output = [afterCutText.slice(0, position), cutText, afterCutText.slice(position)].join('');
