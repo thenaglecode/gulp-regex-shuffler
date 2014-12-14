@@ -29,7 +29,7 @@ gulp.task('test', function() {
         .pipe(gulp.dest(paths.dest.test));
 });
 
-gulp.task('clean', require('del').bind(null, ['.tmp']));
+gulp.task('clean', del.bind(null, ['.tmp']));
 
 gulp.task('default', ['clean'], function(){
     gulp.start('jshint');

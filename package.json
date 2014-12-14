@@ -15,12 +15,11 @@
     "readable-stream": "^1.0.33",
     "split": "^0.3.2",
     "through2": "^0.6.3",
-    "vinyl": "^0.4.6",
     "vinyl-fs": "^0.3.13"
   },
   "description": "Use regular expressions to shuffle around text!",
   "devDependencies": {
-    "assert": "^1.1.2",
+    "del": "^1.1.0",
     "describe": "^1.2.0",
     "event-stream": "^3.1.7",
     "gulp": "^3.8.10",
@@ -35,10 +34,12 @@
     "gulp-karma": "0.0.4",
     "gulp-mocha": "^2.0.0",
     "gulp-rename": "^1.2.0",
+    "gulp-util": "^3.0.1",
     "jshint-stylish": "^1.0.0",
     "karma": "^0.12.28",
     "mocha": "^2.0.1",
-    "should": "^4.3.0"
+    "should": "^4.3.0",
+    "vinyl-fs": "^0.3.13"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -71,10 +72,10 @@
   "name": "gulp-regex-shuffler",
   "repository": {
     "type": "git",
-    "url": "http://bitbucket.org/thenaglecode/gulp-regex-shuffler.git"
+    "url": "https://github.com/thenaglecode/gulp-regex-shuffler"
   },
   "scripts": {
-    "test": "./node_modules/.bin/gulp jshint test"
+    "test": "node_modules/.bin/mocha"
   },
   "version": "0.1.0"
 }
