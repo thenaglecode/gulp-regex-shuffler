@@ -1,11 +1,11 @@
 Release-Notes
 =============
 
-0.2.2 - 15/12/2014
+0.2.3 - 15/12/2014
 
 - **BugFix:** fixed issue where pasteBefore did not paste in correct spot
 
-0.2.1 - 15/12/2014
+0.2.2 - 15/12/2014
 ------------------
 
 - **Documentation:** wrote this release-notes.md file
