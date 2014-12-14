@@ -1,4 +1,6 @@
-# gulp-regex-shuffler [![npm version](https://badge.fury.io/js/gulp-regex-shuffler.svg)](http://badge.fury.io/js/gulp-regex-shuffler) 
+# gulp-regex-shuffler 
+  [![npm version](https://badge.fury.io/js/gulp-regex-shuffler.svg)](http://badge.fury.io/js/gulp-regex-shuffler) 
+  [![Build Status](https://travis-ci.org/thenaglecode/gulp-regex-shuffler.svg?branch=master)](https://travis-ci.org/thenaglecode/gulp-regex-shuffler)
 
 ## Installation
 
