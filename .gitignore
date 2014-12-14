@@ -7,5 +7,4 @@ node_modules/
 *.iml
 *.log
 .idea/
-test/
 .tmp/
