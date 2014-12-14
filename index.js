@@ -66,7 +66,7 @@ var shuffle = function(cutRegex, pasteRegex, opts) {
     pasteRegex = normalizePasteRegex(pasteRegex);
 
     var stream = through.obj(function(file, enc, cb){
-        var cutMatch, pasteMatch, all, afterCutText, fullMatchText, cutText, indexOfCaptureGroup, output;
+        var cutMatch, pasteMatch, all, afterCutText, fullMatchText, cutText, indexOfCaptureGroup, output, actualCutLength;
         if(file.isStream()) {
             throw new PluginError('Streams not yet supported... please teach me more');
         }
@@ -84,13 +84,15 @@ var shuffle = function(cutRegex, pasteRegex, opts) {
                 if(pasteMatch) {
                     if(opts.captureGroup > 0) {
                         indexOfCaptureGroup = fullMatchText.indexOf(cutText);
-                        afterCutText = [all.slice(0, cutMatch.index + indexOfCaptureGroup), 
-                            all.slice(cutMatch.index + indexOfCaptureGroup + cutText.length, all.length)]
+                        startIndexOfGroup = cutMatch.index + indexOfCaptureGroup;
+                        endIndexOfCaptureGroup = cutMatch.index + indexOfCaptureGroup + cutText.length;
+                        afterCutText = [all.slice(0,startIndexOfGroup ),
+                            all.slice(endIndexOfCaptureGroup, all.length)]
                             .join('');
                     } else {
                         afterCutText = [all.slice(0, cutMatch.index), all.slice(cutRegex.lastIndex, all.length)].join('');
                     }
-                    position = (opts.pasteBefore) ? pasteMatch.index : pasteRegex.lastIndex;
+                    position = (opts.pasteBefore) ? pasteMatch.index - cutMatch[0].length : pasteRegex.lastIndex ;
                     output = [afterCutText.slice(0, position), cutText, afterCutText.slice(position)].join('');
                     file.contents = new Buffer(output);
                 } else {
