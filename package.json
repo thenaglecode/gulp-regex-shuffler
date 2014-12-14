@@ -24,7 +24,7 @@
     "vinyl": "^0.4.6"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "homepage": "http://thenaglecode.com/npm/gulp-regex-shuffler",
   "keywords": [
